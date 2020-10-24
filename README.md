@@ -52,9 +52,9 @@ then().statusCode(404));
 - `mvn verify -P ReconciliationmanagerRequestWhenFromDateIsEqualsToDate_TestRunner`
 - `mvn verify -P ReconciliationmanagerRequestWhenJWTnotProvided_TestRunner`
 
-## To run the End to End Subscriptions Automation Regression Suite via command promt / CD
+## To run the all End to End tests in by one command
 - run the End to End Automation Regression Suite, run `mvn verify -P ReconciliationmanagerRequestTestSuite_TestRunner`
 
-## Test results are getting generated in html using Serenity as shown below.
+## Test results are getting generated in html using Serenity as shown below path.
 
 * target/site/serenity
