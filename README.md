@@ -22,22 +22,29 @@ then().log().all();
 then().statusCode(404));
 
 * Check body response - by parsing the JSON
-            //Validating the Response body objects
-            soft.assertThat(LoadTestData_ReconciliationManager.testData_ReconciliationManager.reconciliationManager_response.contains("errors"));
-            soft.assertThat(LoadTestData_ReconciliationManager.testData_ReconciliationManager.reconciliationManager_response.contains("message"));
-            soft.assertThat(LoadTestData_ReconciliationManager.testData_ReconciliationManager.reconciliationManager_response.contains("code"));
 
-            //Fetching the Response body
-            String errorMessage = js.getString("errors.message");
-            String errorCode = js.getString("errors.code");
-
-            //Validating the error message from the response
-            System.out.println("errorMessage_ifTopicNameIsIncorrect: " + errorMessage);
-            soft.assertThat(errorMessage).isEqualTo(LoadTestData_ReconciliationManager.testData_ReconciliationManager.errorMessage_ifTopicNameIsIncorrect);
-
-            //Validating the error code from the response
-            System.out.println("errorCode_ifTopicNameIsIncorrect: " + errorCode);
-            soft.assertThat(errorCode).isEqualTo(LoadTestData_ReconciliationManager.testData_ReconciliationManager.errorCode_ifTopicNameIsIncorrect);
+                        //Validating the Response body objects
+                        soft.assertThat(LoadTestData_ReconciliationManager.testData_ReconciliationManager.reconciliationManager_response.contains("errors"));
+                        soft.assertThat(LoadTestData_ReconciliationManager.testData_ReconciliationManager.reconciliationManager_response.contains("message"));
+                        soft.assertThat(LoadTestData_ReconciliationManager.testData_ReconciliationManager.reconciliationManager_response.contains("code"));
+                        soft.assertThat(LoadTestData_ReconciliationManager.testData_ReconciliationManager.reconciliationManager_response.contains("maxIntervalLength"));
+            
+                        //Fetching the Response body
+                        String errorMessage = js.getString("errors.message");
+                        String errorCode = js.getString("errors.code");
+                        String maxIntervalLength_error = js.getString("errors.maxIntervalLength");
+            
+                        //Validating the error message from the response
+                        System.out.println("errorMessage_maxIntervalLength exceeds: " + errorMessage);
+                        soft.assertThat(errorMessage).isEqualTo(LoadTestData_ReconciliationManager.testData_ReconciliationManager.errorMessage_maxIntervalLength);
+            
+                        //Validating the error code from the response
+                        System.out.println("errorCode_maxIntervalLength exceeds: " + errorCode);
+                        soft.assertThat(errorCode).isEqualTo(LoadTestData_ReconciliationManager.testData_ReconciliationManager.errorCode_maxIntervalLength);
+            
+                        //Validating the maxIntervalLength message from the response
+                        System.out.println("error_maxIntervalLength exceeds: " + maxIntervalLength_error);
+                        soft.assertThat(maxIntervalLength_error).isEqualTo(LoadTestData_ReconciliationManager.testData_ReconciliationManager.error_maxIntervalLength);
 
 ## Need to add the test data into respective filed of below shown file for test data. 
 * testdata/ReconciliationManager/ReconciliationManager.yaml
