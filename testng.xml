@@ -3,7 +3,6 @@
 <suite name="Suite" parallel="classes">
   <test thread-count="5" name="Test" parallel="classes">
   <classes>
-            <class name="com.browserstack.cucumber.SingleTest.java"/>
-        </classes>
+  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
